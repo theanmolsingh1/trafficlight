@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                width: 100%;
+                background-color: beige;
+                align-items: center;
+                justify-content: center;
+            }
+            .bbc {
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                flex-direction: row;
+                gap: 200px;
+            }
+            .bbox {
+                display: flex;
+                flex-direction: column;
+            }
+            .bb {
+                display: flex;
+                flex-direction: column;
+                height: 500px;
+                width: 200px;
+                border-radius: 20px;
+                background-color: rgb(90, 51, 51);
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+            }
+            .inner {
+                display: flex;
+                height: 150px;
+                width: 150px;
+                border-radius: 180px;
+                background-color: rgb(0, 0, 0);
+            }
+            .dropbox {
+                display: flex;
+                flex-direction: column;
+                height: 200px;
+                width : 200px;
+                background-color: rgb(0, 0, 0);
+                border-radius: 18px;
+                box-shadow:  red 1px 1px 2px;
+                padding: 10px;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bbc">
+            <div class="dropbox">
+                <select id="ans" style="width: 100px; height: 30px; border-radius: 5px; margin-top: 40px;" onchange="fun()">
+                    <option>Select</option>
+                    <option value="red">Red</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                </select>
+            </div>
+            <div class="bbox">
+                <h1>Traffic Light </h1>
+                <div class="bb">
+                    <div class="inner" id="a"></div>
+                    <div class="inner" id="b"></div>
+                    <div class="inner" id="c"></div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function fun(){
+                let aa = document.getElementById("ans").value;
+                let a = document.getElementById("a");
+                let b = document.getElementById("b");
+                let c = document.getElementById("c");
+                if(aa==="red"){
+                    b.style.backgroundColor = "red";
+                    a.style.backgroundColor = "black";
+                    c.style.backgroundColor = "black";
+                    document.getElementById("ans").value = "Select";
+                    return;
+                }
+                if(aa==="yellow"){
+                    a.style.backgroundColor = "yellow";
+                    b.style.backgroundColor = "black";
+                    c.style.backgroundColor = "black";
+                    document.getElementById("ans").value = "Select";
+                    return;
+                }
+                if(aa==="green"){
+                    c.style.backgroundColor = "green";
+                    b.style.backgroundColor = "black";
+                    a.style.backgroundColor = "black";
+                    document.getElementById("ans").value = "Select";
+                    return;
+                }
+            }
+        </script>
+    </body>
+</html>
